@@ -87,9 +87,13 @@ project/
 ## Screenshots
 See the `screenshots/` directory for example outputs:
 - `basic_search.png`
+![Basic Search](screenshots/basic_search.png)
 - `line_numbers.png`
+![Line Numbers](screenshots/line_numbers.png)
 - `inverted_match.png`
+![Inverted Match](screenshots/inverted_match.png)
 - `error_handling.png`
+![Error Handling](screenshots/error_handling.png)
 
 ## Bonus
 - Running `./mygrep.sh --help` displays a full usage guide.
