@@ -99,5 +99,4 @@ See the `screenshots/` directory for example outputs:
 - Running `./mygrep.sh --help` displays a full usage guide.
 ![help](screenshots/help.png)
 - Unknown flags (e.g., `./mygrep.sh -x`) produce an error message and show help.
-![Unknown flags](screenshots/Unknown _flags.png)
 
