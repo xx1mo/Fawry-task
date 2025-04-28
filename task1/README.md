@@ -1,70 +1,66 @@
 markdown
-# mygrep.sh - Grep Clone
+# mygrep.sh - Mini Grep Tool
 
-##  Task Completion Proof
+## ✅ Task Requirements Met
+- Case-insensitive search (`hello` matches "HELLO")
+- `-n` shows line numbers
+- `-v` inverts matches
+- Handles `-vn`/`-nv` combinations
+- Validates input (missing file/arguments)
 
-###  Basic Functionality
-- Case-insensitive search → Works (`hello` matches "HELLO")
-- Prints matching lines → See Test 1 output below
-
-###  Command Options
-| Option | Tested? | Example Command               |
-|--------|---------|--------------------------------|
-| `-n`   |  Yes   | `./mygrep.sh -n hello testfile.txt` |
-| `-v`   |  Yes   | `./mygrep.sh -v hello testfile.txt` |
-| `-vn`  |  Yes   | `./mygrep.sh -vn hello testfile.txt` |
-
-### Test Proof
+## 🛠️ Usage
 ```bash
-# Test 1: Basic search
+./mygrep.sh [options] search_term filename
+Options:
+Short	Long	Description
+-n	--numbers	Show line numbers
+-v	--invert	Invert match results
+🧪 Test Proof
+1. Basic Search
+bash
 ./mygrep.sh hello testfile.txt
-# Output:
 Hello world
 HELLO AGAIN
-
-# Test 2: Line numbers
+2. With Line Numbers
+bash
 ./mygrep.sh -n hello testfile.txt
-# Output:
 1: Hello world
 4: HELLO AGAIN
-
-# Test 3: Inverted match
+3. Inverted Match
+bash
 ./mygrep.sh -vn hello testfile.txt
-# Output:
 2: This is a test
 3: another test line
 5: Don't match this line
 6: Testing one two three
-
-# Test 4: Error handling
+4. Error Handling
+bash
 ./mygrep.sh -v testfile.txt
-# Output:
 Error: Missing search string
 Usage: ./mygrep.sh [options] search_string filename
- How It Works
-Option Handling:
+🔧 Implementation Notes
+Uses getopts for option parsing (-n, -v, -vn)
 
-Uses getopts for -n/-v
+Case-insensitive by default
 
--vn works because getopts splits it automatically
+Error messages show usage help
 
-Hardest Part:
+📂 Files
+project/
+├── mygrep.sh        # Main script
+├── testfile.txt     # Test data
+└── README.md        # This file
+Screenshots
+See /screenshots folder for test proofs:
 
-Error messages needed 5 rewrites to be clear but simple
+basic_search.png
 
-Future Improvements:
+line_numbers.png
 
--bash
-# Could add:
-grep -E # for regex
-grep -c # for counts
- Bonus Done
---help flag added
+inverted_match.png
 
-Uses getopts properly
+error_handling.png
 
-- Files
-mygrep.sh     # Script
-testfile.txt  # Test data
-screenshots/  # Proof imags
+
+
 
